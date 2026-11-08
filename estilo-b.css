@@ -1,0 +1,90 @@
+/* =====================================================
+   estilo-b.css  ·  Persona B  (exportaciones.html, riesgos.html)
+   Se carga DESPUÉS de styles.css, así que lo que escribas aquí GANA.
+   Idea de diseño: "carga y puerto". Marrón de caja de embarque,
+   naranja de alerta, esquinas más rectas.
+   Estructura de cada regla:  selector { propiedad: valor; }
+   ===================================================== */
+
+
+/* ---------- RETO 1: portada cálida ----------
+   exportaciones.html usa .hero.exportaciones y riesgos.html usa
+   .hero.riesgos, así que cambiamos las dos. Usamos background-image
+   (no background) y repetimos url(...) para conservar la foto; el tamaño
+   y la posición vienen de styles.css. */
+.hero.exportaciones {
+  background-image:
+    linear-gradient(110deg, rgba(60, 28, 8, .92), rgba(214, 110, 20, .55)),
+    url("img/cajas.jpg");
+    
+}
+.hero.riesgos {
+  background-image:
+    linear-gradient(110deg, rgba(70, 18, 10, .92), rgba(190, 60, 20, .55)),
+    url("img/palta-arbol.jpg");
+}
+
+
+/* ---------- RETO 2: raya bajo los títulos ---------- */
+h2::after {
+  background: #E07A1F;
+}
+
+
+/* ---------- RETO 3: tarjetas rectas con borde de color ---------- */
+.card {
+  border-radius: 4px;
+  border-left: 6px solid #E07A1F;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+}
+.tabla {
+  border-radius: 4px;
+}
+
+
+/* ---------- RETO 4: color del menú ---------- */
+nav a:hover,
+nav a.activo {
+  color: #FF9F43;
+}
+
+/* El botón diagonal "Riesgos" también cambia de color.
+   En riesgos.html ese botón lleva la clase "activo" y se ve blanco. */
+nav a.cta         { background: #C2410C; color: #fff; }
+nav a.cta:hover   { background: #fff;    color: #000; }
+nav a.cta.activo  { background: #fff;    color: #000; }
+
+
+/* ---------- RETO 5: otra tipografía ---------- */
+body {
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+}
+
+
+/* ---------- EXTRA: franja de cifras (exportaciones.html) ---------- */
+.franja {
+  background: #3C1C08;
+}
+.cifra span {
+  border-left-color: #E07A1F;
+}
+
+
+/* ---------- EXTRA: tablas ---------- */
+th {
+  background: #3C1C08;
+}
+tbody tr:nth-child(even) {
+  background: #FDF1E4;
+}
+
+
+/* ---------- EXTRA: lista de conclusiones (riesgos.html) ---------- */
+.objetivos li::marker {
+  color: #C2410C;
+}
+
+
+/* ---------- TU TURNO ----------
+   Cambia los colores de arriba por los que tú quieras.
+   Prueba valores en vivo con F12 (inspector) antes de escribirlos. */
